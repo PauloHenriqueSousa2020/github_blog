@@ -14,9 +14,9 @@
 </h2>
 
 <h3> Aplicação </h3>
-<img src="/assets/github_blog.png">
-<img src="/assets/github_blog_search.png">
-<img src="/assets/github_blog_issues.png">
+<img src="src/assets/github_blog.png">
+<img src="src/assets/github_blog_search.png">
+<img src="src/assets/github_blog_issues.png">
 
 <h3> Para utilizar: </h3>
 <p> Faça o download do projeto no GitHub <br/>
