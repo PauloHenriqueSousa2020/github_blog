@@ -7,8 +7,6 @@ import { useGetUserGithub } from "@/hooks/useGetUserGithub";
 export function Profile() {
   const { userGithub } = useGetUserGithub({ userName: "PauloHenriqueSousa2020" });
 
-  console.log(userGithub);
-
   return (
     <S.ProfileContainer>
       <img src={userGithub.avatar_url} />

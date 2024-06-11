@@ -1,16 +1,30 @@
+import ReactMarkdown from 'react-markdown'
+
+import { formatDistanceToNow } from 'date-fns';
+import { ptBR } from 'date-fns/locale';
+
 import * as S from "./styles";
 
-export function Card() {
+interface CardProps {
+  item: {
+    id: number;
+    body: string;
+    updated_at: string;
+    title: string;
+  }
+}
+
+export function Card({ item }: CardProps) {
   return (
     <S.CardContainer>
       <S.CardHeader>
-        <label>JavaScript data types and data structures</label>
-        <span>Há 1 dia</span>
+        <label>{item.title}</label>
+        <span>{formatDistanceToNow(item.updated_at, { addSuffix: true, locale: ptBR })}</span>
       </S.CardHeader>
       <S.CardDescription>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, modi! Odio quas ipsam error accusantium amet dolores accusamus, rem numquam dolorum exercitationem optio maxime. Iure sapiente rem enim nobis commodi?
-        </p>
+        <ReactMarkdown className='markdown'>
+          {item.body}
+        </ReactMarkdown>
       </S.CardDescription>
     </S.CardContainer>
   )

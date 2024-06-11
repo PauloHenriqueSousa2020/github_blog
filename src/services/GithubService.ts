@@ -5,6 +5,12 @@ const getUserGithub = async ({ userName }: { userName: string }) => {
   return data;
 }
 
+const getUserGithubIssues = async ({ q }: { q: string }) => {
+  const { data } = await api.get(`/search/issues?q=${q}repo:PauloHenriqueSousa2020/github_blog`);
+  return data;
+}
+
 export default {
-  getUserGithub
+  getUserGithub,
+  getUserGithubIssues
 }

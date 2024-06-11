@@ -5,8 +5,11 @@ export const CardContainer = styled.div`
   border-radius: 10px;
   width: 26rem;
   padding: 1.5rem;
+  cursor: pointer;
 
-
+  &:hover {
+    outline: 2px solid ${({ theme }) => theme.colors.baseBorder};
+  }
 `
 
 export const CardHeader = styled.header`
@@ -32,7 +35,7 @@ export const CardDescription = styled.div`
   margin-top: 1rem;
   height: 7rem;
 
-  p {
+  .markdown {
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
