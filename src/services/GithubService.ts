@@ -6,9 +6,11 @@ const getUserGithub = async ({ userName }: { userName: string }) => {
 }
 
 const getUserGithubIssues = async ({ q }: { q: string }) => {
-  const { data } = await api.get(`/search/issues?q=${q}&repo=PauloHenriqueSousa2020/github_blog`);
+  // Ensure q is properly URL encoded
+  const encodedQuery = encodeURIComponent(q);
+  const { data } = await api.get(`/search/issues?q=${encodedQuery}+repo:PauloHenriqueSousa2020/github_blog`);
   return data;
-}
+};
 
 const getUserGithubIssueById = async ({ id }: { id: number }) => {
   const { data } = await api.get(`/repos/PauloHenriqueSousa2020/github_blog/issues/${id}`);
