@@ -35,3 +35,10 @@ export const CardContainer = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 `
+
+export const EmptySearch = styled.p`
+  color: ${({ theme }) => theme.colors.baseTitle};
+  font-size: 1.25rem;
+  text-align: center;
+  margin-top: 5rem;
+`

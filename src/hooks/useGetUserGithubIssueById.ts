@@ -25,14 +25,17 @@ export function useGetUserGithubIssueById({ id }: { id: number }) {
       login: ""
     }
   });
+  const [loading, setLoading] = useState(false);
 
   const getUserGithubIssues = useCallback(async () => {
     try {
+      setLoading(true)
       const data = await GithubService.getUserGithubIssueById({ id })
       setUserGithubIssue(data);
     } catch (error) {
       console.log(error)
     }
+    setLoading(false)
   }, [id]);
 
   useEffect(() => {
@@ -40,6 +43,7 @@ export function useGetUserGithubIssueById({ id }: { id: number }) {
   }, [getUserGithubIssues]);
 
   return {
-    userGithubIssue
+    userGithubIssue,
+    loading
   }
 }

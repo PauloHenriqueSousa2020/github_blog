@@ -16,6 +16,10 @@ export const ProfileContainer = styled.div`
     border-radius: 8px;
     box-shadow: 0px 2px 28px rgba(0, 0, 0, 0.2);
   }
+
+  div {
+    flex: 1;
+  }
 `
 
 export const ProfileHeader = styled.div`

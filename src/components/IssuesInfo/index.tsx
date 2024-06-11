@@ -47,10 +47,12 @@ export function IssuesInfo({ item }: IssuesInfoProps) {
             <span>{item.user.login}</span>
           </S.IssuesInfoIcon>
 
-          <S.IssuesInfoIcon>
-            <FaCalendarDay size={16} />
-            <span>{formatDistanceToNow(item.updated_at, { addSuffix: true, locale: ptBR })}</span>
-          </S.IssuesInfoIcon>
+          {item?.updated_at && (
+            <S.IssuesInfoIcon>
+              <FaCalendarDay size={16} />
+              <span>{formatDistanceToNow(item?.updated_at, { addSuffix: true, locale: ptBR })}</span>
+            </S.IssuesInfoIcon>
+          )}
 
           <S.IssuesInfoIcon>
             <IoChatbubble size={16} />

@@ -4,11 +4,16 @@ import { IssuesInfo } from "@/components/IssuesInfo";
 
 import * as S from "./styles";
 import { useGetUserGithubIssueById } from '@/hooks/useGetUserGithubIssueById';
+import { Loading } from '@/components/Loading';
 
 export function Issues() {
   const { id } = useParams();
-  const { userGithubIssue } = useGetUserGithubIssueById({ id: +id! })
+  const { userGithubIssue, loading } = useGetUserGithubIssueById({ id: +id! })
 
+  if (loading) {
+    return <Loading />
+  }
+  
   return (
     <S.IssuesContainer>
       <IssuesInfo item={userGithubIssue} />
