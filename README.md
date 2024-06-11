@@ -18,7 +18,6 @@
 <img src="/assets/github_blog_search.png">
 <img src="/assets/github_blog_issues.png">
 
-
 <h3> Para utilizar: </h3>
 <p> Faça o download do projeto no GitHub <br/>
 <br/>Execute <code>npm install</code> na pasta <b>do projeto</b>, para instalar as dependências.<br/>
