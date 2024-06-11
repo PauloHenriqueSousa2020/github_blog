@@ -7,7 +7,6 @@ export const HomeContainer = styled.div`
   margin-top: -8rem;
 `
 
-
 export const SearchContainer = styled.div`
   margin-top: 4rem;
   

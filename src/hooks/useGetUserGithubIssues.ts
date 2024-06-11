@@ -8,6 +8,7 @@ interface userGithubIssuesProps {
     body: string;
     updated_at: string;
     title: string;
+    number: number;
   }[]
 }
 export function useGetUserGithubIssues({ q }: { q: string }) {

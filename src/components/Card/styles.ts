@@ -1,11 +1,13 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-export const CardContainer = styled.div`
+export const CardContainer = styled(Link)`
   background-color: ${({ theme }) => theme.colors.basePost};
   border-radius: 10px;
   width: 26rem;
   padding: 1.5rem;
   cursor: pointer;
+  text-decoration: none;
 
   &:hover {
     outline: 2px solid ${({ theme }) => theme.colors.baseBorder};
@@ -34,6 +36,7 @@ export const CardHeader = styled.header`
 export const CardDescription = styled.div`
   margin-top: 1rem;
   height: 7rem;
+  color: ${({ theme }) => theme.colors.baseText};
 
   .markdown {
     display: -webkit-box;

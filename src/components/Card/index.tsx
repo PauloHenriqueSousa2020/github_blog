@@ -11,12 +11,13 @@ interface CardProps {
     body: string;
     updated_at: string;
     title: string;
+    number: number;
   }
 }
 
 export function Card({ item }: CardProps) {
   return (
-    <S.CardContainer>
+    <S.CardContainer to={`/issues/${item.number}`}>
       <S.CardHeader>
         <label>{item.title}</label>
         <span>{formatDistanceToNow(item.updated_at, { addSuffix: true, locale: ptBR })}</span>
